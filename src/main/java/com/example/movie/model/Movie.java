@@ -1,8 +1,53 @@
-/*
- * You can use the following import statements
- * 
- * import javax.persistence.*;
- * 
- */
+package com.example.movie.model;
 
-// Write your code here
+import javax.persistence.*;
+
+@Entity
+@Table(name = "movielist")
+public class Movie {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "movieid")
+    private int movieId;
+
+    @Column(name = "moviename")
+    private String movieName;
+
+    @Column(name = "leadactor")
+    private String leadActor;
+
+    public Movie() {
+    }
+
+    public Movie(int movieId, String movieName, String leadActor) {
+        this.movieId = movieId;
+        this.movieName = movieName;
+        this.leadActor = leadActor;
+    }
+
+    public int getMovieId() {
+        return this.movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+
+    public String getMovieName() {
+        return this.movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
+    public String getLeadActor() {
+        return this.leadActor;
+    }
+
+    public void setLeadActor(String leadActor) {
+        this.leadActor = leadActor;
+    }
+
+}
