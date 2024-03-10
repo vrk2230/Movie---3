@@ -24,7 +24,7 @@ public class MovieController {
         return movieJpaService.getMovieById(movieId);
     }
 
-    @PostMapping("movies")
+    @PostMapping("/movies")
     public Movie addMovie(@RequestBody Movie movie) {
         return movieJpaService.addMovie(movie);
     }
